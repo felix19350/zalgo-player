@@ -7,5 +7,5 @@ Zalgo Player is a React component that implements a purely text based frequency 
 The player is available as an npm dependency. Simply npm install it:
 
 ```bash
-$ npm -i @felix.bruno/zalgo-player
+$ npm install @felix.bruno/zalgo-player
 ```
