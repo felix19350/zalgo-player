@@ -1,6 +1,6 @@
 {
   "name": "@felix.bruno/zalgo-player",
-  "private": true,
+  "private": false,
   "version": "1.0.1",
   "type": "module",
   "main": "dist/zalgo-player.js",
