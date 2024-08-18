@@ -1,7 +1,7 @@
 export enum ZalgoMode {
   TOP,
   BOTTOM,
-  MIRROR,
+  BOTH,
 }
 
 export class ZalgoTextGenerator {
@@ -20,7 +20,7 @@ export class ZalgoTextGenerator {
         case ZalgoMode.BOTTOM:
           this.generateBottomDiacritics();
           break;
-        case ZalgoMode.MIRROR:
+        case ZalgoMode.BOTH:
           this.generateMirroredDiacritics();
           break;
       }
@@ -69,18 +69,51 @@ export class ZalgoTextGenerator {
   }
 
   private generateTopDiacritics() {
-    for (let i = 768; i < 790; i++) {
+    // TODO: Test using a text decoder
+    for (let i = 768; i <= 789; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
+    this.combiningChars.push(String.fromCharCode(794));
+    this.combiningChars.push(String.fromCharCode(795));
+    for (let i = 829; i <= 836; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
+    this.combiningChars.push(String.fromCharCode(838));
+    this.combiningChars.push(String.fromCharCode(842));
+    this.combiningChars.push(String.fromCharCode(843));
+    this.combiningChars.push(String.fromCharCode(844));
+    this.combiningChars.push(String.fromCharCode(849));
+
+    for (let i = 867; i <= 879; i++) {
       this.combiningChars.push(String.fromCharCode(i));
     }
   }
 
   private generateBottomDiacritics() {
-    throw new Error("Not implemented");
+    // TODO: Test using a text decoder
+    for (let i = 790; i <= 793; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
+
+    for (let i = 796; i <= 819; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
+    for (let i = 825; i <= 828; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
+    this.combiningChars.push(String.fromCharCode(837));
+    this.combiningChars.push(String.fromCharCode(839));
+    this.combiningChars.push(String.fromCharCode(840));
+    this.combiningChars.push(String.fromCharCode(841));
+    this.combiningChars.push(String.fromCharCode(845));
+    this.combiningChars.push(String.fromCharCode(846));
+    for (let i = 851; i <= 854; i++) {
+      this.combiningChars.push(String.fromCharCode(i));
+    }
   }
 
   private generateMirroredDiacritics() {
-    for (let i = 768; i < 879; i++) {
-      this.combiningChars.push(String.fromCharCode(i));
-    }
+    this.generateTopDiacritics();
+    this.generateBottomDiacritics();
   }
 }
