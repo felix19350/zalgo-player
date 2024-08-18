@@ -2,6 +2,17 @@
 
 Zalgo Player is a React component that implements a purely text based frequency analyzer, i.e. a "winamp style graph".
 
+![Zalgo player screenshot](./docs/hero-shot.png)
+
+This is primarily meant to be a fun experiment to test the limits of text unicode text rendering in the browser, but the results are pretty metal.
+
+For a more in-depth explanation of unicode combining characters and how this effect was achieved, my series of blog posts about the Unicode standard:
+
+- [A deep dive into Unicode - I](https://techlead.net/a-deep-dive-into-unicode-part-1/)
+- [A deep dive into Unicode - II](https://techlead.net/a-deep-dive-into-unicode-part-2/)
+
+About the name: Zalgo is an internet horror meme of the early 2000s. See the[wikipedia](https://en.wikipedia.org/wiki/Zalgo_text) article for more details.
+
 ## Using the player
 
 The player is available as an npm dependency. Simply npm install it:
