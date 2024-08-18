@@ -1,7 +1,25 @@
 {
   "name": "@felix.bruno/zalgo-player",
+  "author": {
+    "name": "Bruno Felix",
+    "url": "https://techlead.net/"
+  },
   "private": false,
   "version": "1.0.2",
+  "license": "MIT",
+  "keywords": [
+    "audio",
+    "player",
+    "analyzer",
+    "multimedia",
+    "unicode",
+    "text",
+    "react"
+  ],
+  "homepage": "https://github.com/felix19350/zalgo-player",
+  "bugs": {
+    "url": "https://github.com/felix19350/zalgo-player/issues"
+  },
   "type": "module",
   "main": "dist/zalgo-player.js",
   "types": "dist/main.d.ts",

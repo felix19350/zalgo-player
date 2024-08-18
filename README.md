@@ -11,7 +11,7 @@ For a more in-depth explanation of unicode combining characters and how this eff
 - [A deep dive into Unicode - I](https://techlead.net/a-deep-dive-into-unicode-part-1/)
 - [A deep dive into Unicode - II](https://techlead.net/a-deep-dive-into-unicode-part-2/)
 
-About the name: Zalgo is an internet horror meme of the early 2000s. See the[wikipedia](https://en.wikipedia.org/wiki/Zalgo_text) article for more details.
+About the name: Zalgo is an internet horror meme of the early 2000s. See the [wikipedia](https://en.wikipedia.org/wiki/Zalgo_text) article for more details.
 
 ## Using the player
 
