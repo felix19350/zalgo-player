@@ -4,8 +4,9 @@
     "name": "Bruno Felix",
     "url": "https://techlead.net/"
   },
+  "description": "Zalgo Player is a React component that implements a purely text based frequency analyzer, i.e. a `winamp style graph`, taking advantage of how unicode combining characters are rendered.",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "keywords": [
     "audio",
