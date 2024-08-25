@@ -50,23 +50,9 @@ export const ZalgoPlayer = (props: ZalgoPlayerProps) => {
   const analyser: MutableRefObject<AnalyserNode | null> = useRef(null);
   const intervalId: MutableRefObject<number> = useRef(-1);
 
-  const [isSetupDone, setIsSetupDone] = useState(false);
+  const [_, setIsSetupDone] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [analyzerBar, setAnalyzerBar] = useState("-".repeat(props.numColumns));
-
-  // Setup the audio processing pipeline. Needs only to be done once.
-  useEffect(() => {
-    if (audioNode.current !== null && analyser.current == null) {
-      const context = new AudioContext();
-      const theAnalyser = context.createAnalyser();
-      const source = context.createMediaElementSource(audioNode.current);
-      // build the audio processing graph
-      source.connect(theAnalyser);
-      theAnalyser.connect(context.destination);
-      analyser.current = theAnalyser;
-      setIsSetupDone(true);
-    }
-  }, [isSetupDone]);
 
   const render = useCallback(() => {
     setAnalyzerBar(
@@ -97,13 +83,23 @@ export const ZalgoPlayer = (props: ZalgoPlayerProps) => {
   }, [isPlaying, analyzerBar, props.refreshRateMs, render]);
 
   const onPlay = () => {
+    // Setup the audio processing pipeline. Needs only to be done once.
+    if (audioNode.current !== null && analyser.current == null) {
+      const context = new AudioContext();
+      const theAnalyser = context.createAnalyser();
+      const source = context.createMediaElementSource(audioNode.current);
+      // build the audio processing graph
+      source.connect(theAnalyser);
+      theAnalyser.connect(context.destination);
+      analyser.current = theAnalyser;
+      setIsSetupDone(true);
+    }
     setIsPlaying(true);
   };
 
   const onPause = () => {
     setIsPlaying(false);
     if (intervalId.current !== -1) {
-      // clearInterval(intervalId.current);
       cancelAnimationFrame(intervalId.current);
       intervalId.current = -1;
     }
